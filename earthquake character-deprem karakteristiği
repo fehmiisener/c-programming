@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//Depremin büyüklüğüne göre deprem karakteristiğini görüntüleyen program.
+//Depremin  büyüklüğüne göre deprem karakteristiğini görüntüleyen program.
 //A program that displays earthquake characteristics according to the magnitude of the earthquake.
 
 int main()
