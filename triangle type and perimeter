@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float cevre;
+    float x,y,z;
+    printf("Enter the edge length of the triangle = ");
+    printf("\nEdge 1 : ");
+     scanf("%f",&x);
+        printf("\nEdge 2 : ");
+         scanf("%f",&y);
+            printf("\nEdge 3 : ");
+             scanf("%f",&z);
+    cevre=x+y+z;
+    if(x==y && y==z)
+        printf("\nEquilateral triangle");
+    if(x==y && x!=z || x==z && z!=y || z==y && x!=y)
+        printf("\nTwin Edge Triangle");
+    if(x!=y && y!=z && x!=z)
+        printf("\nTriangular triangle");
+    printf("\nPerimeter %f",cevre);
+    return 0;
+}
