@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int usalma(int t, int u){
+    int carpim=1;
+    if(u==0){
+      carpim=1;
+    }
+    for(int i=0; i<u; i++){
+        carpim=carpim*t;
+    }
+    return carpim;
+}
+int seriHesaplama(int a,int b,int c){
+    int toplam=0;
+    int x=0;
+    for(int i=0; i<c; i++){
+
+        x=(1+usalma(a,i))*(1+usalma(b,i));
+        printf("%d +",x);
+        toplam=toplam+x;
+    }
+    return toplam;
+}
+
+int main()
+{
+    printf("Please enter a value b value and length (c)\n");
+    int a,b,c;
+    printf("a :");
+    scanf("%d",&a);
+    printf("b :");
+    scanf("%d",&b);
+    printf("c :");
+    scanf("%d",&c);
+    printf("\nTotal result : %d",seriHesaplama(a,b,c));
+    return ;
+}
