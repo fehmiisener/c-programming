@@ -25,7 +25,7 @@ int seriHesaplama(int a,int b,int c){
 
 int main()
 {
-    printf("Please enter a value b value and length (c)\n");
+    printf("Please enter a value b  value and length (c)\n");
     int a,b,c;
     printf("a :");
     scanf("%d",&a);
