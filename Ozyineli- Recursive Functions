@@ -23,11 +23,11 @@ int usalma(int taban,int us){
 int main()
 {
     int t,u;
-    printf("Tam sayi giriniz : ");
+    printf("Enter Integer : ");
     scanf("%d",&t);
-    printf("Us giriniz : ");
+    printf("Enter Power : ");
     scanf("%d",&u);
-    printf("Girilen sayi : %d | rakamlari toplamini : %d | %d ussu : %d",t,basamaktoplami(t),u,usalma(basamaktoplami(t),u));
+    printf("Number entered : %d | Sum of numbers : %d | %d's power : %d",t,basamaktoplami(t),u,usalma(basamaktoplami(t),u));
 
     return 0;
 }
