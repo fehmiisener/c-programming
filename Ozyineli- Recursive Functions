@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+int basamaktoplami(int x){
+        int sum=0;
+    if(x==0)
+        return sum;
+    else
+    sum=sum+(x%10);
+        x=x/10;
+    return basamaktoplami(x)+sum;
+}
+int usalma(int taban,int us){
+
+    if(us==0)
+        return 1;
+    else
+    return taban*usalma(taban,us-1);
+
+}
+int main()
+{
+    int t,u;
+    printf("Tam sayi giriniz : ");
+    scanf("%d",&t);
+    printf("Us giriniz : ");
+    scanf("%d",&u);
+    printf("Girilen sayi : %d | rakamlari toplamini : %d | %d ussu : %d",t,basamaktoplami(t),u,usalma(basamaktoplami(t),u));
+
+    return 0;
+}
