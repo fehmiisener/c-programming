@@ -1,0 +1,144 @@
+#include <stdio.h>
+#include <stdlib.h>
+void tabanCevrim(int sayi,int taban){
+    int i=0,kalan,n;
+    n=3;
+    int C[n];
+    while(sayi>0){
+        kalan=sayi%taban;
+        sayi=sayi/taban;
+        C[i]=kalan;
+        i++;
+    }
+    for(int k=0; k<n; k++)
+        printf("%d - ",C[k]);
+}
+
+int diziTopla(int D1[],int D2[],int n)
+{
+
+    int D3[n];
+    for(int i=0; i<n; i++)
+    {
+        D3[i]=D1[i]+D2[i];
+        printf("%d - ",D3[i]);
+    }
+
+    return D3;
+}
+int diziTopla2(int D1[],int D2[],int n)
+{
+    int temp,elde;
+    int dizi[n+1];
+    elde=0;
+    for(int i=n-1; i>-1; i--)
+    {
+        temp=D1[i]+D2[i]+elde;
+        dizi[i+1]=temp%10;
+        elde=temp/10;
+
+    }
+    dizi[0]=elde;
+    for(int k=0; k<n+1; k++)
+    {   if(k==0)
+            printf("%d ",dizi[k]);
+        else if(k==1)
+            printf("%d - ",dizi[k]);
+        else
+        printf("%d - ",dizi[k]);
+    }
+
+}
+int diziCarp(int D1[],int D2[],int n)
+{
+    int D3[n];
+    for(int i=0; i<n; i++)
+    {
+        D3[i]=D1[i]*D2[i];
+        printf("%d - ",D3[i]);
+    }
+}
+void diziSiralaS(int D1[],int n)
+{
+    for(int i=0; i<n-1; i++)
+    {
+        int temp,enk=i;
+        for(int j=i+1; j<n; j++)
+        {
+            if(D1[j]<D1[enk])
+                enk=j;
+        }
+        temp=D1[i];
+        D1[i]=D1[enk];
+        D1[enk]=temp;
+    }
+    for(int k=0; k<n; k++)
+        printf("%d - ",D1[k]);
+}
+void diziSiralaB(int dizi[],int n)
+{
+    int gecici;
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<n-1-i; j++)
+        {
+            if(dizi[j] > dizi[j+1])
+            {
+                gecici = dizi[j];
+                dizi[j] = dizi[j+1];
+                dizi[j+1] = gecici;
+            }
+        }
+    }
+    for(int k=0; k<n; k++)
+        printf("%d - ",dizi[k]);
+}
+void diziDegistir(int dizi[],int dizi2[],int n)
+{
+    int temp;
+    for(int i=0; i<n; i++)
+    {
+        temp=dizi[i];
+        dizi[i]=dizi2[i];
+        dizi[i]=temp;
+    }
+    for(int k=0; k<n; k++)
+    {
+        printf("Dizi 2 %d indis : %d - \n",k,dizi[k]);
+        printf("Dizi 1 %d indis : %d - \n",k,dizi2[k]);
+
+    }
+
+
+}
+void diziCevir(int dizi[],int n)
+{
+    int dizio[n];
+    for(int j=0; j<n; j++)
+    {
+        dizio[j]=dizi[j];
+    }
+    int temp;
+
+    for(int i=0; i<n/2; i++)
+    {
+
+        temp=dizi[i];
+        dizi[i]=dizi[n-i-1];
+        dizi[n-1-i]=temp;
+    }
+    for(int k=0; k<n; k++)
+    {
+        printf("Eski dizi %d : %d - ",k,dizio[k]);
+        printf("Yeni dizi %d : %d - \n",k,dizi[k]);
+
+    }
+
+}
+int main()
+{
+
+    int A[5]= {9,1,1,1,5};
+    int B[5]= {1,1,1,1,6};
+    return 0;
+}
